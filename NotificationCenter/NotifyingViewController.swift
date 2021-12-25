@@ -8,7 +8,8 @@
 import UIKit
 
 class NotifyingViewController: UIViewController {
-
+    
+    //This dict will be used while sending info.
     var messageContent = ["userMessage": ""]
     @IBOutlet weak var messageTextField: UITextField!
     override func viewDidLoad() {
@@ -22,6 +23,7 @@ class NotifyingViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    // If text not empty, gets user message from text field and broadcasts it as dict type.
     @IBAction func sendPressed(_ sender: UIButton) {
         if messageTextField.text != "" {
             messageContent["userMessage"] = messageTextField.text
